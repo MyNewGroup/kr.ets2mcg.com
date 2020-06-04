@@ -4,7 +4,7 @@
 	<meta charset="UTF8" />
 	<title>홈 | ETS2MCG KR</title>
 	<!-- to prevent stylesheet cacheing, change the value after ?nocache -->
-	<link rel="stylesheet" href="css/stylesheet.css?nocache2ddasfrh56s47rtee">
+	<link rel="stylesheet" href="css/stylesheet.css?nocache2ddasfrh56sf47rtee">
 	<link rel="icon" href="https://common.ets2mcg.com/img/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#f7d331">
 	<meta property="og:site_name" content="ETS2MCG Korea" />
@@ -137,18 +137,19 @@
 			<li><a href="rules.html" class="member">VTC 규칙</a></li>
 		</ul>
 	</div>
-
-	<div style="width: 100%; background-color: #222222;">
-		<div class="pagecontent langchooser"
-			style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 50px;">
-			<div style="display: block; margin: 0 auto; text-align: center;">
-				<span class="languageflagtitle" style="color: black;">언어</span>
-				<a class="languageflagbutton" href="https://ets2mcg.com/" title="영어">🇬🇧</a><a
-					class="languageflagbutton" href="https://kr.ets2mcg.com/" title="한국어">🇰🇷</a><a
-					class="languageflagbutton" href="https://cn.ets2mcg.com/" title="중국어">🇨🇳</a><a
-					class="languageflagbutton" href="https://th.ets2mcg.com/" title="태국어">🇹🇭</a>
+	<div class="langchooser" style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 50px;">
+		<div style="display: block; margin: 0 auto; text-align: center;">
+			<span class="languageflagtitle" style="color: black;">언어</span>
+			<div style="display: inline-block;">
+				<a class="languageflagbutton" href="https://ets2mcg.com/" title="영어">🇬🇧</a>
+				<a class="languageflagbutton" href="https://kr.ets2mcg.com/" title="한국어">🇰🇷</a>
+				<a class="languageflagbutton" href="https://cn.ets2mcg.com/" title="중국어">🇨🇳</a>
+				<a class="languageflagbutton" href="https://th.ets2mcg.com/" title="태국어">🇹🇭</a>
 			</div>
 		</div>
+	</div>
+
+	<div style="width: 100%; background-color: #222222;">
 		<div class="pagecontent">
 			<h1>ETS2MCG 소개</h1>
 			<p>ETS2MCG(<i>ETS2 Multiplayer Convoys Group</i>) 팀은 2016년에 설립되었습니다. 우리는 많은 나라(베트남, 태국, 대한민국, 일본, 인도네시아,
@@ -238,12 +239,23 @@
 	<script>
 		initializeScrollWorker(".pagecontent");
 
-		twemoji.parse($(".langchooser")[0]);
+		twemoji.parse($(".langchooser")[0], {
+			size: "svg",
+			ext: ".svg"
+		});
 		$(".langchooser").css("visibility", "");
 
 		$(".languageflagbutton").hover((obj) => {
 			$(".languageflagbutton").css("z-index", "5");
 			$(obj.currentTarget).css("z-index", "50");
+		})
+
+		$(".languageflagbutton").each((i, elem) => {
+			$(elem).addClass("languageflagbutton_loading");
+			$(elem).css("animation-delay", i * 150 + "ms");
+			setTimeout(() => {
+				$(elem).removeClass("languageflagbutton_loading")
+			}, i * 150 + 1000);
 		})
 	</script>
 
