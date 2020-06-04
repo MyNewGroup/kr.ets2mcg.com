@@ -251,8 +251,8 @@
 		})
 
 		$(".languageflagbutton").each((i, elem) => {
-			$(elem).addClass("languageflagbutton_loading");
 			$(elem).css("animation-delay", i * 150 + "ms");
+			$(elem).addClass("languageflagbutton_loading");
 			setTimeout(() => {
 				$(elem).removeClass("languageflagbutton_loading")
 			}, i * 150 + 1000);
