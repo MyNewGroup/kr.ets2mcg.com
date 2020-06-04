@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
 body {
     overflow-x: hidden;
     color: white;
@@ -18,7 +20,7 @@ div.teamtitle {
 }
 
 div.teamtext {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Nanum Myeongjo', serif;
     font-size: 3vh;
     color: goldenrod;
     font-weight: 100;
@@ -117,21 +119,21 @@ a.foot:active {
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 50 !important;
     font-weight: 500 !important;
     margin: 0 !important;
 }
 
 h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 40 !important;
     font-weight: 500 !important;
     margin: 0 !important;
 }
 
 h3 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 35 !important;
     font-weight: 500 !important;
     margin: 0 !important;
@@ -184,7 +186,7 @@ ul#menubar>li {
     width: auto;
     color: white;
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 ul#menubar>li.right {
