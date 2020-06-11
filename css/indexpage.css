@@ -97,14 +97,14 @@ div.pagecontent.sectionid2 {
 }
 
 div.teamtitle {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 7vh;
     color: black;
     font-weight: 900;
 }
 
 div.teamtext {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 3vh;
     color: black;
     font-weight: 100;
