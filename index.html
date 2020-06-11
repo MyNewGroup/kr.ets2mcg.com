@@ -4,7 +4,9 @@
 	<meta charset="UTF8" />
 	<title>홈 | ETS2MCG KR</title>
 	<!-- to prevent stylesheet cacheing, change the value after ?nocache -->
-	<link rel="stylesheet" href="css/stylesheet.css?nocache2ddasfdddddddddddrh56sf47rtee">
+	<link rel="stylesheet" href="css/fonts.css?a">
+	<link rel="stylesheet" href="css/indexpage.css?abcdefasdfgsadf">
+	<link rel="stylesheet" href="css/stylesheet.css?nocachefbjrfbhasdgvdd">
 	<link rel="icon" href="https://common.ets2mcg.com/img/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#f7d331">
 	<meta property="og:site_name" content="ETS2MCG Korea" />
@@ -16,7 +18,7 @@
 	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="margin: 0; background-color: #000000;">
+<body>
 	<!-- HEADER -->
 	<div id="header" style="z-index: 50; width: 100%;">
 		<div style="width: 100%; position: relative; padding: 5vh 0;">
@@ -40,17 +42,14 @@
 		</div>
 	</div>
 	<!-- The slides will be loaded by script dynamically -->
-	<div id="slideshow" style="position: absolute; background-color: black; z-index: -10; display: block;"></div>
+	<div id="slideshow" style="position: absolute; background-color: black; z-index: -10; display: block; width: 100%;">
+	</div>
 
 	<script>
 		let resized = () => {
 			let slideshow = $("#slideshow");
-			let width = $("#header").outerWidth();
-			let height = $("#header").outerHeight();
 
-			slideshow.width(width)
-			slideshow.height(height)
-
+			slideshow.height($("#header").height());
 			slideshow.css("top", $("#header").position().top)
 		};
 		window.onresize = resized;
@@ -131,13 +130,13 @@
 		keywordTick()
 	</script>
 
-	<div style="width: 100%; background-color: #333333;">
+	<div class="menubarContainer">
 		<ul id="menubar">
 			<li><a href="privacy.html" class="member">개인정보처리방침</a></li>
 			<li><a href="rules.html" class="member">VTC 규칙</a></li>
 		</ul>
 	</div>
-	<div class="langchooser" style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 0px;">
+	<div class="langChooser">
 		<div style="display: block; margin: 0 auto; text-align: center;">
 			<span class="languageflagtitle" style="color: black;">언어</span>
 			<div style="display: inline-block; font-family: sans-serif;">
@@ -149,7 +148,7 @@
 		</div>
 	</div>
 
-	<div style="width: 100%; background-color: #222222;">
+	<div class="post">
 		<div class="pagecontent">
 			<h1>ETS2MCG 소개</h1>
 			<p>ETS2MCG(<i>ETS2 Multiplayer Convoys Group</i>)는 2016년에 설립된 아시아 팀입니다. 지금 우리는 베트남, 태국, 대한민국, 일본, 인도네시아,
@@ -164,9 +163,9 @@
 			</ul>
 			<i>ETS2MCG는 일반적인 팀이 아닙니다. 우리는 모든 드라이버들을 위한 거대한 가족입니다!</i>
 		</div>
-		<div class="pagecontent" style="background-color: #00878a;">
+		<div class="pagecontent sectionid2">
 			<h2>왜 ETS2MCG인가요?</h2>
-			<p>ETS2MCG에 가입하면 많은 혜택을 누릴 수 있어요!</p>
+			<p>ETS2MCG 팀에 가입하는 분들을 위해 수만은 혜택이 기다리고 있습니다!</p>
 			<ul>
 				<li>DLC 선물 이벤트에 참여할 수 있습니다.</li>
 				<li>팀 내외의 이벤트를 빠르게 확인하고 참여할 수 있습니다.</li>
@@ -174,7 +173,7 @@
 				<li>ETS2MCG에서 운전하면 속도감을 느낄 수 있습니다.</li>
 			</ul>
 		</div>
-		<div class="pagecontent" style="background-color: #706400;">
+		<div class="pagecontent sectionid1">
 			<h2>ETS2MCG에 지원하기</h2>
 			<p>아래에 있는 요건들을 모두 만족할 경우 ETS2MCG팀에 지원할 수 있습니다.</p>
 			<ul>
@@ -201,7 +200,7 @@
 				우리 팀에게 이메일로도 연락할 수 있습니다.
 			</p>
 		</div>
-		<div class="pagecontent" style="background-color: #000000;">
+		<div class="pagecontent">
 			<h2>SNS</h2>
 			<br>
 			<p>ETS2MCG팀은 페이스북 그룹, 유튜브 채널, 스팀 그룹 등 커뮤니티를 보유하고 있습니다. 거기서 만나요!</p>
@@ -230,7 +229,7 @@
 				<h3>ETS2MCG 스팀 그룹</h3>
 			</a>
 		</div>
-		<div class="pagecontent" style="background-color: #000000;">
+		<div class="pagecontent">
 			<br>
 			<p>ETS2MCG, We are family!</p>
 		</div>
@@ -239,11 +238,11 @@
 	<script>
 		initializeScrollWorker(".pagecontent");
 
-		twemoji.parse($(".langchooser")[0], {
+		twemoji.parse($(".langChooser")[0], {
 			size: "svg",
 			ext: ".svg"
 		});
-		$(".langchooser").css("visibility", "");
+		$(".langChooser").css("visibility", "visible");
 
 		$(".languageflagbutton").hover((obj) => {
 			$(".languageflagbutton").css("z-index", "5");
