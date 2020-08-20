@@ -1,12 +1,13 @@
 <html>
 
 <head>
+	<!-- Add anything here if github pages's not deploying -->
 	<meta charset="UTF8" />
 	<title>홈 | ETS2MCG KR</title>
 	<!-- to prevent stylesheet cacheing, change the value after ?nocache -->
 	<link rel="stylesheet" href="css/fonts.css?a">
 	<link rel="stylesheet" href="css/indexpage.css?abcdefasdfgsadf">
-	<link rel="stylesheet" href="css/stylesheet.css?nocachefbjrfbhasdgvdd">
+	<link rel="stylesheet" href="css/stylesheet.css?nocachefbjrfbasdfafgdshgvddfgsdgfhdfg">
 	<link rel="icon" href="https://common.ets2mcg.org/img/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#f7d331">
 	<meta property="og:site_name" content="ETS2MCG Korea" />
@@ -191,13 +192,10 @@
 					href="https://docs.google.com/forms/d/e/1FAIpQLSfD-z3zFC2AWd6wTUqqFzuzEPR8cX3yXZcM8yQNvrkMgS4mag/viewform">여기</a>를
 				눌러서 양식에 맞게 입력해주세요.
 			</p>
-			<h3><a class="text" target="_blank"
-					href="https://docs.google.com/forms/d/e/1FAIpQLSfD-z3zFC2AWd6wTUqqFzuzEPR8cX3yXZcM8yQNvrkMgS4mag/viewform">여기를
-					눌러도 됩니다!!!</a></h3>
-			<p><a class="text" target="_blank" href="https://discord.gg/vez83th">여기</a>를 누르면 우리 팀의 디스코드 서버에 참여할 수 있습니다.
-				궁금한 게 있다면 얼마든지 물어보세요!
-				<a class="text" target="_blank" href="mailto:kiengiangnt2000@gmail.com">여기</a>를 눌러 우리 팀에 이메일로 연락할 수도
-				있습니다.
+			<a target="_blank" class="snsButton" style="background-color: black;" href="https://apply.ets2mcg.org">ETS2MCG에 지원하기</a>
+			<p>저희의 <a class="text" target="_blank"
+					href="https://discord.gg/vez83th">디스코드 서버</a>에 참여하실 수 있습니다.
+				궁금한 사항이 있다면 참여 후 물어보세요! <a class="text" target="_blank" href="mailto:kiengiangnt2000@gmail.com">여기</a>로 이메일을 보내도 답변드리겠습니다.
 			</p>
 		</div>
 		<div class="pagecontent">
@@ -205,29 +203,11 @@
 			<br>
 			<p>ETS2MCG팀은 페이스북 그룹, 유튜브 채널, 스팀 그룹 등 커뮤니티를 보유하고 있습니다. 거기서 만나요!</p>
 			<br>
-		</div>
-		<div class="pagecontent" style="background-color: #333333;">
-			<a class="sns" target="_blank" href="https://truckersmp.com/vtc/387">
-				<h3>TruckersMP VTC 페이지</h3>
-			</a>
-		</div>
-		<div class="pagecontent" style="background-color: #00235e;">
-			<a class="sns" target="_blank" href="https://www.facebook.com/groups/ETS2MCG/">
-				<h3>페이스북 ETS2MCG 그룹</h3>
-			</a>
-			<a class="sns" target="_blank" href="https://www.facebook.com/ETS2MCG/">
-				<h3>페이스북 ETS2MCG 페이지</h3>
-			</a>
-		</div>
-		<div class="pagecontent" style="background-color: #aa0000;">
-			<a class="sns" target="_blank" href="https://www.youtube.com/channel/UCVOWxE3zbIjnXdJB7mzyckw">
-				<h3>ETS2MCG 유튜브</h3>
-			</a>
-		</div>
-		<div class="pagecontent" style="background-color: #1b2838;">
-			<a class="sns" target="_blank" href="https://steamcommunity.com/groups/teamets2mcg">
-				<h3>ETS2MCG 스팀 그룹</h3>
-			</a>
+			<a target="_blank" class="snsButton" style="background-color: #333" href="https://truckersmp.com/vtc/387">TruckersMP</a>
+			<a target="_blank" class="snsButton" style="background-color: #00235e" href="https://www.facebook.com/groups/ETS2MCG/">Facebook Group</a>
+			<a target="_blank" class="snsButton" style="background-color: #00235e" href="https://www.facebook.com/ETS2MCG/">Facebook Page</a>
+			<a target="_blank" class="snsButton" style="background-color: #aa0000" href="https://www.youtube.com/channel/UCVOWxE3zbIjnXdJB7mzyckw">YouTube</a>
+			<a target="_blank" class="snsButton" style="background-color: #1b2838" href="https://steamcommunity.com/groups/teamets2mcg">Steam Group</a>
 		</div>
 		<div class="pagecontent">
 			<br>
@@ -243,11 +223,6 @@
 			ext: ".svg"
 		});
 		$(".langChooser").css("visibility", "visible");
-
-		$(".languageflagbutton").hover((obj) => {
-			$(".languageflagbutton").css("z-index", "5");
-			$(obj.currentTarget).css("z-index", "50");
-		})
 
 		$(".languageflagbutton").each((i, elem) => {
 			$(elem).css("animation-delay", i * 150 + "ms");
