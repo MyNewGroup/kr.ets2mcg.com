@@ -1,18 +1,24 @@
 <html>
 
 <head>
-	<!-- Add anything here if github pages's not deploying -->
+	<!-- Add anything here if github pages's not deploying. -->
 	<meta charset="UTF8" />
 	<title>홈 | ETS2MCG KR</title>
 	<!-- to prevent stylesheet cacheing, change the value after ?nocache -->
 	<link rel="stylesheet" href="css/fonts.css?a">
-	<link rel="stylesheet" href="css/indexpage.css?abcdefasdfgsadf">
-	<link rel="stylesheet" href="css/stylesheet.css?nocachefbjrfbasdfafgdshgvddfgsdgfhdfg">
+	<link rel="stylesheet" href="css/indexpage.css?abcdefasdfgasdffsadfgehf">
+	<link rel="stylesheet" href="css/stylesheet.css?nocachefbbghdshgvddfgsdgfhdfg">
 	<link rel="icon" href="https://common.ets2mcg.org/img/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#f7d331">
+<<<<<<< HEAD
 	<meta property="og:site_name" content="ETS2MCG Korea" />
 	<meta property="og:title" content="홈 | ETS2MCG KR" />
 	<meta property="og:description" content="ETS2MCG는 2016년에 설립된 아시아 팀입니다. 현재 다양한 나라의 사람들이 함께합니다. 우리는 가족입니다!" />
+=======
+	<meta property="og:site_name" content="ETS2MCG" />
+	<meta property="og:title" content="Home | ETS2MCG" />
+	<meta property="og:description" content="ETS2MCG Team was established in 2016. We are an Asian Team with many countries. We are family!" />
+>>>>>>> eec69c3e0dd51eb543c3feb70cd5838042cea826
 	<meta property="og:image" content="https://common.ets2mcg.org/img/ETS2MCG.png" />
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/basehelper.js"></script>
@@ -140,11 +146,19 @@
 		<div style="display: block; margin: 0 auto; text-align: center;">
 			<span class="languageflagtitle" style="color: black;">언어</span>
 			<div style="display: inline-block; font-family: sans-serif;">
+<<<<<<< HEAD
 				<a class="languageflagbutton" href="https://ets2mcg.org/" title="영어">🇬🇧</a>
 				<a class="languageflagbutton" href="https://kr.ets2mcg.org/" title="한국어">🇰🇷</a>
 				<a class="languageflagbutton" href="https://cn.ets2mcg.org/" title="중국어">🇨🇳</a>
 				<a class="languageflagbutton" href="https://th.ets2mcg.org/" title="태국어">🇹🇭</a>
 				<a class="languageflagbutton" href="https://tw.ets2mcg.org/" title="중국어">🇹🇼</a>
+=======
+				<a class="languageflagbutton" href="https://ets2mcg.org/" title="English">🇬🇧</a>
+				<a class="languageflagbutton" href="https://kr.ets2mcg.org/" title="Korean">🇰🇷</a>
+				<a class="languageflagbutton" href="https://cn.ets2mcg.org/" title="Chinese">🇨🇳 WIP</a>
+				<a class="languageflagbutton" href="https://th.ets2mcg.org/" title="Thai">🇹🇭 WIP</a>
+				<a class="languageflagbutton" href="https://tw.ets2mcg.org/" title="Taiwanese">🇹🇼 WIP</a>
+>>>>>>> eec69c3e0dd51eb543c3feb70cd5838042cea826
 			</div>
 		</div>
 	</div>
@@ -229,6 +243,8 @@
 						--button-color-a: #a38b00;
 						--neumorph-color-a: #ebc800;
 						--neumorph-color-b: #5b4e00;
+						
+						color: white;
 					}
 				}
 			</style>
@@ -237,16 +253,33 @@
 				궁금한 사항이 있다면 참여 후 물어보세요! <a class="text" target="_blank" href="mailto:kiengiangnt2000@gmail.com">여기</a>로 이메일을 보내도 답변드리겠습니다.
 			</p>
 		</div>
+		<style>
+			div#snsFrame {
+				background-color: #9c9c9c;
+			}
+
+			@media(prefers-color-scheme: dark) {
+				div#snsFrame {
+					background-color: #404040;
+				}
+			}
+		</style>
 		<div class="pagecontent">
-			<h2>SNS</h2>
-			<br>
-			<p>ETS2MCG팀은 페이스북 그룹, 유튜브 채널, 스팀 그룹 등 커뮤니티를 보유하고 있습니다. 거기서 만나요!</p>
-			<br>
-			<a target="_blank" class="snsButton" style="background-color: #333" href="https://truckersmp.com/vtc/387">TruckersMP</a>
-			<a target="_blank" class="snsButton" style="background-color: #00235e" href="https://www.facebook.com/groups/ETS2MCG/">페이스북 그룹</a>
-			<a target="_blank" class="snsButton" style="background-color: #00235e" href="https://www.facebook.com/ETS2MCG/">페이스북 페이지</a>
-			<a target="_blank" class="snsButton" style="background-color: #aa0000" href="https://www.youtube.com/channel/UCVOWxE3zbIjnXdJB7mzyckw">유튜브</a>
-			<a target="_blank" class="snsButton" style="background-color: #1b2838" href="https://steamcommunity.com/groups/teamets2mcg">스팀 그룹	</a>
+			<h2>Let's stay connected.</h2>
+			<p>ETS2MCG team has Facebook group, YouTube channel, Steam group. We hope to see you there!</p>
+			<div style="width: 100%; padding: 20px 0; border-radius: 15px; border: 2px currentColor; display: block;" id="snsFrame">
+				<div style="margin: 0 auto; display: block; width: 95%;">
+					<a target="_blank" class="snsButton" style="background: linear-gradient(110deg, #555, #555 83%, #bb0000 90%);" href="https://truckersmp.com/vtc/387">TruckersMP VTC Page</a>
+					<a target="_blank" class="snsButton" style="background: linear-gradient(110deg, #fff, #bbb 10%, #bb0000 17%);" href="https://www.youtube.com/channel/UCVOWxE3zbIjnXdJB7mzyckw">YouTube</a>
+				</div>
+				<div style="margin: 0 auto; display: block; width: 95%;">
+					<a target="_blank" class="snsButton" style="background: linear-gradient(110deg, #fc5776, #fc5776 10%, #00235e 17%);" href="https://www.facebook.com/groups/ETS2MCG/">Facebook Group</a>
+					<a target="_blank" class="snsButton" style="background: linear-gradient(110deg, #2d88ff, #00235e);" href="https://www.facebook.com/ETS2MCG/">Facebook Page</a>
+				</div>
+				<div style="margin: 0 auto; display: block; width: 95%;">
+					<a target="_blank" class="snsButton" style="background: linear-gradient(110deg, #171a21, #183d58); margin: 5 auto; display: block;" href="https://steamcommunity.com/groups/teamets2mcg">Steam Group</a>
+				</div>
+			</div>
 		</div>
 		<div class="pagecontent">
 			<br>
