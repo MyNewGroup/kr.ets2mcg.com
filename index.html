@@ -42,93 +42,8 @@
 		</div>
 	</div>
 	<!-- The slides will be loaded by script dynamically -->
-	<div id="slideshow" style="position: absolute; background-color: black; z-index: -10; display: block; width: 100%;">
+	<div id="slideshow">
 	</div>
-
-	<script>
-		let resized = () => {
-			let slideshow = $("#slideshow");
-
-			slideshow.height($("#header").height());
-			slideshow.css("top", $("#header").position().top)
-		};
-		window.onresize = resized;
-		resized();
-
-		{
-			var x = document.getElementsByClassName("imgSlide");
-			for (i = 0; i < x.length; i++) {
-				let jq = $(x[i]);
-				jq.hide();
-			}
-		}
-
-		var slideIndex = 0;
-		var first = true;
-		loadSlideshowSlides();
-		carousel();
-		function carousel() {
-
-			if (!document.hidden) {
-				var i;
-				var x = document.getElementsByClassName("imgSlide");
-				for (i = 0; i < x.length; i++) {
-					let jq = $(x[i]);
-					if (!first) {
-						jq.addClass("backFadingOut")
-					}
-				}
-				if (slideIndex === x.length) { slideIndex = 0 }
-
-				let prev = slideIndex - 1;
-				if (prev < 0) prev = x.length - 1;
-
-				$(x[prev]).addClass("backFadingOut");
-				$(x[prev]).removeClass("backFadingIn");
-
-				$(x[slideIndex]).show();
-				$(x[slideIndex]).removeClass("backFadingOut");
-				$(x[slideIndex]).addClass("backFadingIn");
-
-				slideIndex++;
-				if (first) first = false;
-			}
-
-			setTimeout(carousel, 7000); // Change image every 2 seconds
-		}
-	</script>
-
-	<script>
-		let currentKeywordIndex = 0;
-		function keywordTick() {
-			let c = document.getElementsByClassName("keyword-item");
-			let a = $(c[currentKeywordIndex]);
-			let b = $("#keyword")
-
-			let text = a.text();
-			let curText = b.text();
-			let done = false;
-
-			if (!text.startsWith(curText)) {
-				curText = curText.substring(0, curText.length - 1);
-			} else if (text !== curText) {
-				curText += text.substring(curText.length).charAt(0);
-			} else if (text === curText) {
-				done = true;
-			}
-
-			b.text(curText);
-
-			if (done) {
-				currentKeywordIndex++;
-				if (currentKeywordIndex === c.length) currentKeywordIndex = 0;
-				setTimeout(keywordTick, Number(a.attr("delay")));
-			} else {
-				setTimeout(keywordTick, 50);
-			}
-		}
-		keywordTick()
-	</script>
 
 	<div class="menubarContainer">
 		<ul id="menubar">
@@ -136,15 +51,22 @@
 			<li><a href="rules.html" class="member">VTC 규칙</a></li>
 		</ul>
 	</div>
-	<div class="langChooser">
+	<div class="langChooser" style="width: 100%; overflow: hidden;">
 		<div style="display: block; margin: 0 auto; text-align: center;">
 			<span class="languageflagtitle" style="color: black;">언어</span>
 			<div style="display: inline-block; font-family: sans-serif;">
-				<a class="languageflagbutton" href="https://ets2mcg.org/" title="영어">🇬🇧</a>
-				<a class="languageflagbutton" href="https://kr.ets2mcg.org/" title="한국어">🇰🇷</a>
-				<a class="languageflagbutton" href="https://cn.ets2mcg.org/" title="중국어">🇨🇳 WIP</a>
-				<a class="languageflagbutton" href="https://th.ets2mcg.org/" title="태국어">🇹🇭 WIP</a>
-				<a class="languageflagbutton" href="https://tw.ets2mcg.org/" title="중국어">🇹🇼 WIP</a>
+				<<<<<<< HEAD <a class="languageflagbutton" href="https://ets2mcg.org/" title="영어">🇬🇧</a>
+					<a class="languageflagbutton" href="https://kr.ets2mcg.org/" title="한국어">🇰🇷</a>
+					<a class="languageflagbutton" href="https://cn.ets2mcg.org/" title="중국어">🇨🇳 WIP</a>
+					<a class="languageflagbutton" href="https://th.ets2mcg.org/" title="태국어">🇹🇭 WIP</a>
+					<a class="languageflagbutton" href="https://tw.ets2mcg.org/" title="중국어">🇹🇼 WIP</a>
+					=======
+					<a class="languageflagbutton" href="https://ets2mcg.org/" title="English">🇬🇧</a>
+					<a class="languageflagbutton" href="https://kr.ets2mcg.org/" title="Korean">🇰🇷</a>
+					<a class="languageflagbutton" href="https://cn.ets2mcg.org/" title="Chinese">🇨🇳 WIP</a>
+					<a class="languageflagbutton" href="https://th.ets2mcg.org/" title="Thai">🇹🇭</a>
+					<a class="languageflagbutton" href="https://tw.ets2mcg.org/" title="Taiwanese">🇹🇼 WIP</a>
+					>>>>>>> 301f4d7c51eb7dbdcc1f5ece2c68adda2279a7db
 			</div>
 		</div>
 	</div>
@@ -229,7 +151,7 @@
 						--button-color-a: #a38b00;
 						--neumorph-color-a: #ebc800;
 						--neumorph-color-b: #5b4e00;
-						
+
 						color: white;
 					}
 				}
@@ -274,6 +196,133 @@
 	</div>
 
 	<script>
+		// Slideshow
+		function resizeSlideshow() {
+			let slideshow = $("#slideshow");
+			let post = $(".post");
+			let last = null;
+
+			let isDownPosition = () => {
+				//return post[0].getBoundingClientRect().top < 0;
+				return window.scrollY > 0;
+			}
+			let resized = (firstTime = false, forceUpdate = false) => {
+				let rect = post[0].getBoundingClientRect();
+				if (last === null) {
+					last = !isDownPosition();
+				}
+				if (last != isDownPosition() || forceUpdate) {
+					last = isDownPosition();
+					if (last) {
+						slideshow.addClass("fullscr");
+						slideshow.removeClass("nonfullscr");
+						slideshow.css("transition", "height 1s");
+						slideshow.height("");
+						post.css("background-color", "rgba(0, 0, 0, 0)")
+						post.css("transition", "background-color 2s ease-out");
+						post.css("transition-delay", "300ms");
+					} else {
+						slideshow.addClass("nonfullscr");
+						slideshow.removeClass("fullscr");
+						if (firstTime) {
+							slideshow.css("transition", "none");
+							slideshow.css("transition-delay", "0s");
+						} else {
+							slideshow.css("transition", "height 1s");
+							slideshow.css("transition-delay", "0s");
+						}
+						slideshow.height($("#header").height());
+						post.css("background-color", "")
+						post.css("transition", "background-color 0.2s ease-in-out");
+						post.css("transition-delay", "");
+					}
+				}
+			};
+			window.onresize = () => {
+				resized(false, true);
+			};
+			resized(true);
+
+			$(document).on("scroll", () => {
+				resized();
+			});
+		}
+		resizeSlideshow();
+
+		{
+			var x = document.getElementsByClassName("imgSlide");
+			for (i = 0; i < x.length; i++) {
+				let jq = $(x[i]);
+				jq.hide();
+			}
+		}
+
+		var slideIndex = 0;
+		var first = true;
+		loadSlideshowSlides();
+		carousel();
+		function carousel() {
+
+			if (!document.hidden) {
+				var i;
+				var x = document.getElementsByClassName("imgSlide");
+				for (i = 0; i < x.length; i++) {
+					let jq = $(x[i]);
+					if (!first) {
+						jq.addClass("backFadingOut")
+					}
+				}
+				if (slideIndex === x.length) { slideIndex = 0 }
+
+				let prev = slideIndex - 1;
+				if (prev < 0) prev = x.length - 1;
+
+				$(x[prev]).addClass("backFadingOut");
+				$(x[prev]).removeClass("backFadingIn");
+
+				$(x[slideIndex]).show();
+				$(x[slideIndex]).removeClass("backFadingOut");
+				$(x[slideIndex]).addClass("backFadingIn");
+
+				slideIndex++;
+				if (first) first = false;
+			}
+
+			setTimeout(carousel, 7000); // Change image every 2 seconds
+		}
+
+		// Word switcher
+
+		let currentKeywordIndex = 0;
+		function keywordTick() {
+			let c = document.getElementsByClassName("keyword-item");
+			let a = $(c[currentKeywordIndex]);
+			let b = $("#keyword")
+
+			let text = a.text();
+			let curText = b.text();
+			let done = false;
+
+			if (!text.startsWith(curText)) {
+				curText = curText.substring(0, curText.length - 1);
+			} else if (text !== curText) {
+				curText += text.substring(curText.length).charAt(0);
+			} else if (text === curText) {
+				done = true;
+			}
+
+			b.text(curText);
+
+			if (done) {
+				currentKeywordIndex++;
+				if (currentKeywordIndex === c.length) currentKeywordIndex = 0;
+				setTimeout(keywordTick, Number(a.attr("delay")));
+			} else {
+				setTimeout(keywordTick, 50);
+			}
+		}
+		keywordTick()
+
 		twemoji.parse($(".langChooser")[0], {
 			size: "svg",
 			ext: ".svg"
